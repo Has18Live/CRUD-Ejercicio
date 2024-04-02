@@ -8,6 +8,7 @@ if(isset($_POST['id'], $_POST['nombre'], $_POST['descripcion'])) {
 
     
     $productoDAO = new ProductoDAO(); // Crear la instancia del ProductoDAO
+    
     if($productoDAO->actualizarProducto($conn, $id, $nombre, $descripcion)) {
         header("Location: ../index.php");
         exit(); 
