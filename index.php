@@ -90,7 +90,7 @@ $query = mysqli_query($conn, $sql);
                             </div>
                             <div class="modal-body">
                                 <!-- Formulario para editar producto -->
-                                <form action="controller/actualizarController.php" method="POST">
+                                <form action="controller/actualizarProductoController.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $row['ID'] ?>">
                                     <div class="form-group">
                                         <label for="nombre">Nombre:</label>
