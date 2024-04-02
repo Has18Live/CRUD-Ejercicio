@@ -1,16 +1,14 @@
 <?php
-include_once('../config/conexion.php');
-$conexion = new Conexion();
-$conn = $conexion->conectar();
+include_once('../model/productoDAO.php'); 
 
+$nombre = $_POST['nombre']; 
+$descripcion = $_POST['descripcion']; 
 
-$nombre = $_POST['nombre'];
-$descripcion = $_POST['descripcion'];
-
-$sql = "INSERT INTO productos (nombre, descripcion) VALUES ('$nombre','$descripcion')";
-$query = mysqli_query($conn, $sql);
-
-if ($query) {
-    Header ("Location: ../index.php");
+$productoDAO = new ProductoDAO(); 
+if ($productoDAO->agregarProducto($nombre, $descripcion)) {
+    header("Location: ../index.php");
+    exit(); 
+} else {
+    echo "Error al agregar el producto.";
 }
 ?>

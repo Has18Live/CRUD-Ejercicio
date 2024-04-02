@@ -1,20 +1,14 @@
 <?php
-include_once('../config/conexion.php');
-$conexion = new Conexion();
-$conn = $conexion->conectar();
+include_once('../model/productoDAO.php'); 
 
+$id = $_GET['id']; 
+$productoDAO = new ProductoDAO(); //Crear instancia
 
-$id = $_GET['id'];
-
-$sql = "DELETE FROM productos WHERE id = '$id'";
-$query = mysqli_query($conn, $sql);
-
-if ($query) {
-    Header ("Location: ../index.php");
+if ($productoDAO->eliminarProducto($id)) { //Llamar al metodo 
+    
+    header("Location: ../index.php");
     exit(); 
 } else {
-    echo "Error al eliminar el producto: " . mysqli_error($conn);
+    echo "Error al eliminar el producto.";
 }
-
-mysqli_close($conn);
 ?>
