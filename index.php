@@ -1,5 +1,5 @@
 <?php
-include ('conexion.php');
+include('config/conexion.php');
 
 $conexion = new Conexion();
 $conn = $conexion->conectar();
@@ -36,7 +36,7 @@ $query = mysqli_query($conn, $sql);
                 </div>
                 <div class="modal-body">
                     <!-- Formulario para agregar producto -->
-                    <form action="agregarProductoController.php" method="POST">
+                    <form action="controller/agregarProductoController.php" method="POST">
                         <div class="form-group">
                             <label for="nombre">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -59,7 +59,7 @@ $query = mysqli_query($conn, $sql);
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
-                    <th>Acciones</th> <!-- Nueva columna para acciones -->
+                    <th>Acciones</th> 
                 </tr>
             </thead>
             <tbody>
@@ -74,7 +74,7 @@ $query = mysqli_query($conn, $sql);
                             Editar
                         </button>
                         <!-- Enlace para eliminar producto -->
-                        <a href="eliminarProductoController.php?id=<?= $row['ID'] ?>" class="btn btn-danger">Eliminar</a>
+                        <a href="controller/eliminarProductoController.php?id=<?= $row['ID'] ?>" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>
 
@@ -90,7 +90,7 @@ $query = mysqli_query($conn, $sql);
                             </div>
                             <div class="modal-body">
                                 <!-- Formulario para editar producto -->
-                                <form action="actualizarController.php" method="POST">
+                                <form action="controller/actualizarController.php" method="POST">
                                     <input type="hidden" name="id" value="<?= $row['ID'] ?>">
                                     <div class="form-group">
                                         <label for="nombre">Nombre:</label>

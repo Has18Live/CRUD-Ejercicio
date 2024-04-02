@@ -1,5 +1,5 @@
 <?php
-include ('conexion.php');
+include_once('../config/conexion.php');
 $conexion = new Conexion();
 $conn = $conexion->conectar();
 
@@ -10,7 +10,7 @@ $sql = "DELETE FROM productos WHERE id = '$id'";
 $query = mysqli_query($conn, $sql);
 
 if ($query) {
-    Header ("Location: index.php");
+    Header ("Location: ../index.php");
     exit(); 
 } else {
     echo "Error al eliminar el producto: " . mysqli_error($conn);

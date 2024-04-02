@@ -6,7 +6,7 @@ class Conexion {
     public function __construct() {
         $host = "localhost";
         $user = "root";
-        $pass = "0000";
+        $pass = "LAcasona";
         $bd = "crud_productos";
 
         $this->conexion = new mysqli($host, $user, $pass, $bd);

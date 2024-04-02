@@ -1,5 +1,5 @@
 <?php
-include ('conexion.php');
+include_once('../config/conexion.php');
 $conexion = new Conexion();
 $conn = $conexion->conectar();
 
@@ -11,6 +11,6 @@ $sql = "INSERT INTO productos (nombre, descripcion) VALUES ('$nombre','$descripc
 $query = mysqli_query($conn, $sql);
 
 if ($query) {
-    Header ("Location: index.php");
+    Header ("Location: ../index.php");
 }
 ?>
