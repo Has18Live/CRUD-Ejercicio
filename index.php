@@ -17,12 +17,7 @@ $query = mysqli_query($conn, $sql);
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Botón para agregar producto -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarModal">
-            Agregar producto
-        </button>
-    </div>
+
 
     <!-- Modal para agregar producto -->
     <div class="modal fade" id="agregarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -109,6 +104,13 @@ $query = mysqli_query($conn, $sql);
                 <?php endwhile; ?>
             </tbody>
         </table>
+    </div>
+
+    <div class="container">
+        <!-- Botón para agregar producto -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarModal">
+            Agregar producto
+        </button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
